@@ -1,4 +1,4 @@
-# AI Predictor of GDP - README
+# AI Predictor of GDP
 
 ## Overview
 

@@ -1,0 +1,241 @@
+
+<!DOCTYPE html>
+<!-- Models Page-->
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Bold Badgers ~ ML Models</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="/static/css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <header>
+            <h1 class="site-heading text-center text-faded d-none d-lg-block">
+                <span class="site-heading-upper text-primary mb-3">GDP Per Capita Predictor</span>
+                <span class="site-heading-lower">Machine Learning Models</span>
+            </h1>
+        </header>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand text-uppercase fw-bold d-lg-none" href="/">Start Bootstrap</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/">Home</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/data_analysis">Data Analysis</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/models">Models</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/model_analysis">Performance</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/interactive">Try our Model</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/team">Our Team</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <br> <br>
+                <!-- explain statistical measures -->
+                <section class="page-section about-heading">
+                    <div class="container">
+                        <div class="about-heading-content">
+                            <div class="row">
+                                <div class="col-xl-9 col-lg-10 mx-auto">
+                                    <div class="bg-faded rounded p-5">
+                                        <h2 class="section-heading mb-4">
+                                            <!-- <span class="section-heading-upper">1st Machine Learning Model</span> -->
+                                            <span class="section-heading-lower">How did we measure our models?</span>
+                                        </h2>
+                                        <h3>R<sup>2</sup> score</h3>   
+                                        <p class="mb-0">
+                                            R<sup>2</sup>is a statistical measure that shows how well the data fit the regression model (the goodness of fit). 
+                                            The value of R<sup>2</sup> can range from 0 to 1, where 0 means that our model does not predict any variability in our data and 1 means that our model prefectly fits/predicts our data.
+
+                                        </p>
+                                        <br>
+                                        <h3>Mean Absolute Error</h3>   
+                                        <p class="mb-0">
+                                            The Mean Absolute Error, or MAE, is a way of testing how accurate our model is. 
+                                            MAE more intuitive than R<sup>2</sup>, but unlike R<sup>2</sup>, is specific to each dataset.
+                                            In our case with GDP per capita, a MAE score of 100 is excellent, while when trying to predict resting heart rate, a MAE of 100 would be abysmal.
+                                            Our Mean Squared Error represents, on average, how much our predicted value differed from the real value.
+                                        </p>
+                                        <br>
+                                        <h3>Distribution Plot</h3>   
+                                        <p class="mb-0">
+                                            For our SciKitLearn models, we created a violin plots to show the distribution of our predicted GDP and read GDP in our testing data.
+                                            The two graphs are overlayed to show differences in distribution.
+                                            This provides some insight on where each model struggles and succeeds.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+        <!-- models -->
+        <section class="page-section about-heading pb-5">
+            <div class="container">
+                <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="assets/img/0000-decision-tree-ppt-template.png" alt= "..." />
+                <div class="about-heading-content">
+                    <div class="row">
+                        <div class="col-xl-9 col-lg-10 mx-auto">
+                            <div class="bg-faded rounded p-5">
+                                <h2 class="section-heading mb-4">
+                                    <span class="section-heading-upper">1st Machine Learning Model</span>
+                                    <span class="section-heading-lower">Decision Tree</span>
+                                </h2>
+                                <h3>Performance</h3>   
+                                <p>
+                                    Decision trees was often our best performing model with a final <b>R<sup>2</sup> score of 0.80</b> and <b>MAE of 2865</b>.
+                                    We improved the performance of our sklearn Decision Tree model through hyperparameter tuning and feature engineering.<br><br>
+
+                                    Hyperparameter tuning helped us find the best hyperparameters for the model when fitted on the GDP per capita data. We achieved this through GridSearchCV function provided by sklearn. The hyperparameters we were interested in for our Decision Tree model were 'criterion', 'max_depth', 'min_samples_split', and 'min_samples_leaf'. For different splits of data, we consistently got 'friedman_mse' for our 'criterion' hyperparameter.
+                                    <br><br>
+                                    We also did feature engineering to help us identify the most important features or the features with the most impactful weights. For our Decision Tree model, we ended up using the top 12 most important features, where Phones (per 1000), Net migration, and Infant mortality (per 1000 births) were the top 3. 
+
+                                    Below is a violin plot showing the distributions of the predicted GDP per capitas and the actual GDP per capitas of 227 countries.
+                                    <br><br>
+                                    <iframe width="700" height="500" title="Violin Plot for Decision Tree Model" src="/static/assets/decision_tree_violin_2.html"></iframe>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- models -->
+        <section class="page-section about-heading pb-5">
+            <div class="container">
+                <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="" alt= "..." >
+                <div class="about-heading-content">
+                    <div class="row">
+                        <div class="col-xl-9 col-lg-10 mx-auto">
+                            <div class="bg-faded rounded p-5">
+                                <h2 class="section-heading mb-4">
+                                    <span class="section-heading-upper">2nd Machine Learning Model</span>
+                                    <span class="section-heading-lower">Random Forest</span>
+                                </h2>
+                                <h3>Performance</h3>   
+                                <p>
+                                    Random forests was our most consistent model with a final <b>R<sup>2</sup> score of 0.77</b> and <b>MAE of 2885</b>.
+                                    We improved the performance of our sklearn Random Forests model through hyperparameter tuning and feature engineering.<br><br>
+
+                                    Again, we achieved this through sklearn's GridSearchCV function. The hyperparameters we were interested in for this model were 'criterion', 'max_depth', 'min_samples_leaf', 'min_samples_split' and 'n_estimators'.
+                                    <br><br>
+
+                                    Additionally, we did feature engineering to help us identify the most important features for this model. We ended up using the top 15 features for our optimized model, which included Phones (per 1000), Infant mortality (per 1000 births), and Net migration as the top 3 features as well. 
+
+                                    Below is a violin plot showing the distributions of the GDP per capitas predicted by the Random Forests model and the actual GDP per capitas of 227 countries.
+                                    <br><br>
+                                    <iframe width="700" height="500" t itle="Violin Plot for Random Forest Model" src="/static/assets/random_forest_violin_2.html"></iframe>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SGD -->
+        <section class="page-section about-heading pb-5">
+            <div class="container">
+                <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="" alt= "..." />
+                <div class="about-heading-content">
+                    <div class="row">
+                        <div class="col-xl-9 col-lg-10 mx-auto">
+                            <div class="bg-faded rounded p-5">
+                                <h2 class="section-heading mb-4">
+                                    <span class="section-heading-upper">3rd Machine Learning Model</span>
+                                    <span class="section-heading-lower">Stochastic Gradient Descent</span>
+                                </h2>
+                                <h3>Performance</h3>   
+                                <p>
+                                    Our initial implementation of Stochastic Gradient Descent yielded a realtively steady model with a final R<sup>2</sup> score of 0.70 and MAE of 3653. <br>
+                                    Hyperparameter Tuning did not improve our model that much, it only resulted in the model using the default parameters. 
+                                    However, Feature Engineering did significantly improve our model. We achieved this improvement by scaling our data 
+                                    
+                                    <br><br>
+                                    <iframe width="700" height="500" title="Violin Plot for SGD" src="/static/assets/sgd_violin_2.html"></iframe>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- MLP NN -->
+        <section class="page-section about-heading pb-5">
+            <div class="container">
+                <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="" alt= "..." />
+                <div class="about-heading-content">
+                    <div class="row">
+                        <div class="col-xl-9 col-lg-10 mx-auto">
+                            <div class="bg-faded rounded p-5">
+                                <h2 class="section-heading mb-4">
+                                    <span class="section-heading-upper">4th Machine Learning Model</span>
+                                    <span class="section-heading-lower">Multi Layered Perceptron Neural Network</span>
+                                </h2>
+                                <h3>Performance</h3>   
+                                <p>
+                                Our neural network had the worst performance of our models, with an R<sup>2</sup> score of consistently around -1 and an MAE of around 10000. 
+                                This was mostly because we didn't have the time to finish tuning our model. 
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- limitations of the models -->
+        <section class="page-section about-heading">
+            <div class="container">
+                <div class="about-heading-content">
+                    <div class="row">
+                        <div class="col-xl-9 col-lg-10 mx-auto">
+                            <div class="bg-faded rounded p-5">
+                                <h2 class="section-heading mb-4">
+                                    <!-- <span class="section-heading-upper">1st Machine Learning Model</span> -->
+                                    <span class="section-heading-lower">Expansions</span>
+                                </h2>
+                                <h3></h3>   
+                                <p></p>
+                                <p class="mb-0">
+                                    As stated earlier, time was a limiting factor for us, and more time would allow us to specifically improve our neural network.
+                                    Our neural network could benefit from experimentation with model architecture, such as trying different numbers of hidden layers and hidden neurons.
+                                    The pytorch library also provides a number of optimizer and loss functions that we have barely scratched the surface of.
+                                    <br>
+                                    <br>
+                                    With more time, another expansion that could improve the performance of our models is expanding our dataset. 
+                                    Our original dataset is quite small, representing the averages of GDP and predicting features for 227 countires over the course of several decades.
+                                    Instead we could look at the sources of our dataset and pull data annually. 
+                                    However, this scraping process would be relatively labor intensive and time consuming.
+                                    <br>
+                                    <br>
+                                    Another expansion could involve more scaling. 
+                                    Our data really benefited from scaling, though we mostly used scaling to normalize our features to have the same range.
+                                    Many of our features seem to be logarithmically or polynomially related to GDP, and scaling these relationships to be linear can often improve model performance. 
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <footer class="footer text-faded text-center py-5">
+            <div class="container"><p class="m-0 small">Copyright &copy; Bold Badgers 2023</p></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="/static/js/scripts.js"></script>
+    </body>
+</html>

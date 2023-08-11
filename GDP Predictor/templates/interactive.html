@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Bold Badgers ~ GDP Per Capita Predictor</title>
+        <link rel="icon" type="image/x-icon" href="static/favicon.ico" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="/static/css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <header>
+            <h1 class="site-heading text-center text-faded d-none d-lg-block">
+                <span class="site-heading-upper text-primary mb-3" style="color:black"><u>Bold Badgers</u></span>
+                <span class="site-heading-lower text-primary"> GDP Predictor A.I.</span>
+            </h1>
+        </header>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand text-uppercase fw-bold d-lg-none" href="/">Start Bootstrap</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/">Home</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/data_analysis">Data Analysis</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/models">Models</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/model_analysis">Performance</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/interactive">Try our Model</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/team">Our Team</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!--  -->
+        <section class="page-section">
+            <div class="container">
+                <div class="product-item">
+                    <div class="product-item-title d-flex">
+                        <div class="bg-faded p-4 d-flex ms-auto rounded">
+                            <h2 class="section-heading mb-0">
+                                <span class="section-heading-upper">Interactive</span>
+                                <span class="section-heading-lower">GDP Per Capita Predictor</span>
+                            </h2>
+                        </div>
+                    </div>
+                    <br><br><br><br><br>
+                    <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="assets/img/dataset.jpg" alt="..." />
+                    <div class="product-item-description d-flex me-auto">
+                        <div class="bg-faded p-5 rounded"><p class="mb-0" style="text-align:right">
+                            <form action="{{url_for('interactive_')}}" method="POST">
+                                <label for="phones">Phones (per 1000 people):</label>
+                                <input type="number" id="phones" name="phones" min = "0" max = "1000"><br><br>
+                                <label for="infant_mortality">Infant Mortality (per 1000 births):</label>
+                                <input type="number" id="infant_mortality" name="infant_mortality"><br><br>
+                                <label for="birthrate"> Birthrate:</label>
+                                <input type="number" id="birthrate" name="birthrate"><br><br>
+                                <label for="deathrate"> Deathrate:</label>
+                                <input type="number" id="deathrate" name="deathrate"><br><br>
+                                <label for="net_migration"> Net Migration:</label>
+                                <input type="number" id="net_migration" name="net_migration"><br><br>
+                                <label for="coastline"> Coastline (coast/area ratio):</label>
+                                <input type="number" id="coastline" name="coastline"><br><br>
+                                <label for="agriculture" text="percentage of GDP that comes from agriculture"> Agriculture:</label>
+                                <input type="number" id="agriculture" name="agriculture" min="0" max="1"><br><br>
+                                <label for="industry" text="percentage of GDP that comes from industrial activities"> Industry:</label>
+                                <input type="number" id="industry" name="industry" min="0" max="1"><br><br>
+                                <label for="service" text="percentage of GDP that comes from the service industry"> Service:</label>
+                                <input type="number" id="service" name="service" min="0" max="1"><br><br>
+                                <label for="arable" title="percentage of land capable of cultivating crops"> Arable (%):</label>
+                                <input type="number" id="arable" name="arable" min="0" max="100"><br><br>
+                                <label for="crops" title="percentage of arable land that is actually used for growing crops"> Crops (%):</label>
+                                <input type="number" id="crops" name="crops" min="0" max="100"><br><br>
+
+                                <input type="submit" value="Submit"> <!-- submission button -->
+                              </form>
+
+                              {% if prediction %}
+                              <br>
+                                <p> The estimated GDP per capita is: ${{prediction}} </p>
+                              <br>
+                              {% endif %}
+
+                        </p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="footer text-faded text-center py- 
+            <div class="container"><p class="m-0 small">Copyright &copy; Bold Badgers 2023</p></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="/static/js/scripts.js"></script>
+    </body>
+</html>

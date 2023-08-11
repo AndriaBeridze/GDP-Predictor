@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Bold Badgers ~ Data Analysis</title>
+        <link rel="icon" type="image/x-icon" href="static/favicon.ico" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="/static/css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <header>
+            <h1 class="site-heading text-center text-faded d-none d-lg-block">
+                <span class="site-heading-upper text-primary mb-3">GDP Per Capita Predictor</span>
+                <span class="site-heading-lower">Data Analysis: Dataset and Graphs</span>
+            </h1>
+        </header>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand text-uppercase fw-bold d-lg-none" href="/">Start Bootstrap</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/">Home</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/data_analysis">Data Analysis</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/models">Models</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/model_analysis">Performance</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/interactive">Try our Model</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/team">Our Team</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <section class="page-section">
+            <div class="container">
+                <div class="product-item">
+                    <div class="product-item-title d-flex">
+                        <div class="bg-faded p-4 d-flex ms-auto rounded">
+                            <h2 class="section-heading mb-0">
+                                <span class="section-heading-upper">GDP Per Capita</span>
+                                <span class="section-heading-lower">Dataset</span>
+                            </h2>
+                        </div>
+                    </div>
+                    <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="/static/img/dataset.jpg" alt="..." />
+                    <div class="product-item-description d-flex me-auto">
+                        <div class="bg-faded p-5 rounded"><p class="mb-0">
+                            Our dataset contains the average GDP per capita from 1970 to 2017 for 227 countries 
+                            as well as the average of other metrics, such as Infant mortality (per 1000 births) 
+                            and Literacy %, for each country. <br><br>
+                            
+                            We want our model to be able to predict the GDP per capita for a country 
+                            based on inputted values for the other metrics. <br><br>
+                            
+                            Here is a link to our dataset: <a href="https://www.kaggle.com/code/noxmoon/world-countries-predicting-gdp/input">GDP Per Capita Dataset</a> <br> <br>
+                            
+
+                            Here is some more specific information on some of the columns:<br>
+
+                            <ul>
+                                <li>Arable %: Percentage of land capable of cultivating crops</li>
+                                <li>Crop %: Percentage of arable land that is actually under cultivation and used for growing crops</li>
+                                <li>Other %: Percentage of arable land that is not used for crops</li>
+                                <li>Agriculture: Percentage of GDP that comes from agriculture</li>
+                                <li>Industry: Percentage of GDP that comes from industrial activities</li>
+                                <li>Service: Percentage of GDP from the service industry</li>
+                            </ul>
+
+                            Some of the metrics for a country are null, so we filled in these values with the median metric value of the region the country is in.
+                        </p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="page-section">
+            <div class="container">
+                <div class="product-item">
+                    <div class="product-item-title d-flex">
+                        <div class="bg-faded p-4 d-flex me-auto rounded">
+                            <h2 class="section-heading mb-0">
+                                <span class="section-heading-upper">Graphs</span>
+                                <span class="section-heading-lower">Heatmap</span>
+                            </h2>
+                        </div>
+                    </div>
+                    <iframe width="850" height="825" title="Heatmap" src="/static/assets/heatmap_smaller.html"></iframe>
+                    <div class="product-item-description d-flex ms-auto">
+                        <div class="bg-faded p-4 rounded"><p class="mb-0">
+                            Above is a heatmap of the correlations between the 10 most impactful features, according to our Random Forest model feature selection, and the target, GDP per capita.
+                            As seen in the color scale to the right, yellow indicates that there is a strong positive correlation between the two variables, red indicates that there is weak or no correlation, and dark purple indicates a strong negative correlation. <br><br>
+                            Some interesting observations are that Phones (per 1000) and GDP per capita have a strong positive correlation, while Birthrate and GDP per capita have a moderate to strong negative correlation. 
+                        </p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="page-section">
+            <div class="container">
+                <div class="product-item">
+                    <div class="product-item-title d-flex">
+                        <div class="bg-faded p-4 d-flex ms-auto rounded">
+                            <h2 class="section-heading mb-0">
+                                <span class="section-heading-upper">Graphs</span>
+                                <span class="section-heading-lower">Scatterplots</span>
+                            </h2>
+                        </div>
+                    </div>
+                    <iframe width="950" height="500" title="GDP per capita vs Infant Mortality" src="/static/infant_mortality_vs_GDP.html"></iframe>
+                    <div class="product-item-description d-flex me-auto">
+                        <div class="bg-faded p-4 rounded"><p class="mb-0">
+                            Above is a scatterplot of GDP per capita vs Infant Mortality (per 1000 births). As we can see, the relationship between the two variables is logarithmic. 
+                        </p></div>
+                    </div>
+                    <br><br>
+                    <iframe width="950" height="500" title="Phones vs GDP per capita" src="/static/Phones_vs_GDP.html"></iframe>
+                    <div class="product-item-description d-flex ms-auto">
+                        <div class="bg-faded p-4 rounded"><p class="mb-0">
+                            Above is a scatterplot of Phones (per 1000) vs GDP per capita. As we can see, the relationship between the two variables is also more logarithmic than linear. 
+                        </p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="page-section">
+            <div class="container">
+                <div class="product-item">
+                    <div class="product-item-title d-flex">
+                        <div class="bg-faded p-4 d-flex me-auto rounded">
+                            <h2 class="section-heading mb-0">
+                                <span class="section-heading-upper">Graphs</span>
+                                <span class="section-heading-lower">3D Scatterplot</span>
+                            </h2>
+                        </div>
+                    </div>
+                    <iframe width="1070" height="850" title="3D Scatterplot" src="/static/3D.html"></iframe>
+                    <div class="product-item-description d-flex me-auto">
+                        <div class="bg-faded p-4 rounded"><p class="mb-0">
+                           Here we have a 3D scatterplot that shows the relationship between Phones (per 1000), Literacy (%), and GDP per capita.
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="page-section">
+            <div class="container">
+                <div class="product-item">
+                    <div class="product-item-title d-flex">
+                        <div class="bg-faded p-4 d-flex me-auto rounded">
+                            <h2 class="section-heading mb-0">
+                                <span class="section-heading-upper">Graphs</span>
+                                <span class="section-heading-lower">Scatter Matrix</span>
+                            </h2>
+                        </div>
+                    </div>
+                    <iframe width="1050" height="850" title="Scatter Matrix" src="static/scatter_matrix_2.html"></iframe>
+                    <div class="product-item-description d-flex me-auto">
+                        <div class="bg-faded p-4 rounded"><p class="mb-0">
+                            Above is a scatter matrix that displays several scatterplots between the features and the target. From this we can see that most variables have logarithmic relationships with one another or no clear relationship at all. 
+                        </p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="footer text-faded text-center py-5">
+            <div class="container"><p class="m-0 small">  &copy; Bold Badgers 2023</p></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="/static/js/scripts.js"></script>
+    </body>
+</html>
